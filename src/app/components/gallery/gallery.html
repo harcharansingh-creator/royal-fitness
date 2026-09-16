@@ -1,0 +1,84 @@
+<section class="gallery-section" id="gallery">
+
+  <div class="gallery-container">
+
+    <div class="gallery-heading">
+      <span class="section-tag">OUR GALLERY</span>
+
+      <h2>
+        TRAIN.
+        <span>TRANSFORM.</span>
+        REPEAT.
+      </h2>
+
+      <p>
+        Take a look inside Royal Fitness and experience our premium
+        training environment.
+      </p>
+    </div>
+
+
+    <div class="gallery-grid">
+
+      @for (image of images; track image) {
+
+        <div
+          class="gallery-item"
+          (click)="openImage(image)"
+          tabindex="0"
+          role="button"
+          (keydown.enter)="openImage(image)"
+        >
+
+          <img
+            [src]="image"
+            alt="Royal Fitness gym"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>VIEW</span>
+            <strong>↗</strong>
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+
+  <!-- LIGHTBOX -->
+
+  @if (selectedImage) {
+
+    <div
+      class="lightbox"
+      (click)="closeImage()"
+      role="dialog"
+      aria-modal="true"
+    >
+
+      <button
+        class="lightbox-close"
+        type="button"
+        (click)="closeImage()"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+
+      <img
+        class="lightbox-image"
+        [src]="selectedImage"
+        alt="Royal Fitness gallery image"
+        (click)="$event.stopPropagation()"
+      >
+
+    </div>
+
+  }
+
+</section>

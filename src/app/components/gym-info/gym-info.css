@@ -1,0 +1,203 @@
+.gym-info-section {
+  background: #0d0d0d;
+  padding: 70px 0;
+
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.gym-info-container {
+  width: min(1200px, 92%);
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+
+/* Card */
+
+.info-card {
+  display: flex;
+
+  gap: 25px;
+
+  padding: 35px;
+
+  background: #111;
+
+  border: 1px solid #242424;
+
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  border-color: #ff4d1c;
+
+  transform: translateY(-5px);
+}
+
+
+/* Icon */
+
+.info-icon {
+  min-width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1a1a1a;
+
+  color: #ff4d1c;
+
+  font-size: 25px;
+
+  border: 1px solid #292929;
+}
+
+
+/* Text */
+
+.info-label {
+  color: #ff4d1c;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.info-card h3 {
+  margin: 10px 0 22px;
+
+  color: white;
+
+  font-size: 21px;
+
+  font-weight: 900;
+}
+
+.info-card p {
+  color: #888;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+
+/* Hours */
+
+.hours {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.hours div {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #222;
+}
+
+.hours span {
+  color: #888;
+
+  font-size: 13px;
+}
+
+.hours strong {
+  color: #ddd;
+
+  font-size: 13px;
+
+  text-align: right;
+}
+
+
+/* Direction Button */
+
+.direction-btn {
+  display: inline-block;
+
+  padding: 12px 17px;
+
+  background: #ff4d1c;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+.direction-btn:hover {
+  background: white;
+  color: #111;
+}
+
+
+/* Tablet */
+
+@media (max-width: 850px) {
+
+  .gym-info-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+  .gym-info-section {
+    padding: 55px 0;
+  }
+
+  .info-card {
+    padding: 25px;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .info-icon {
+    width: 48px;
+  }
+
+  .info-card h3 {
+    font-size: 19px;
+  }
+
+  .hours div {
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .hours strong {
+    text-align: left;
+  }
+
+}

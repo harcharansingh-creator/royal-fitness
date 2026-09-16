@@ -1,0 +1,133 @@
+<section class="pricing-section" id="pricing">
+
+  <div class="pricing-container">
+
+    <!-- Heading -->
+
+    <div class="pricing-heading">
+
+      <div>
+        <span class="section-tag">
+          MEMBERSHIP PLANS
+        </span>
+
+        <h2>
+          CHOOSE YOUR
+          <span>PLAN.</span>
+        </h2>
+      </div>
+
+      <p>
+        Flexible membership plans designed to help you stay consistent,
+        train harder and achieve your fitness goals.
+      </p>
+
+    </div>
+
+
+    <!-- Pricing Cards -->
+
+    <div class="pricing-grid">
+
+      @for (plan of plans; track plan.name) {
+
+        <div
+          class="pricing-card"
+          [class.featured]="plan.featured"
+        >
+
+          <!-- Popular Badge -->
+
+          @if (plan.featured) {
+
+            <div class="popular-badge">
+              MOST POPULAR
+            </div>
+
+          }
+
+
+          <!-- Plan Number -->
+
+          <div class="plan-top">
+
+            <span class="plan-number">
+              0{{ $index + 1 }}
+            </span>
+
+            <span class="plan-name">
+              {{ plan.name }}
+            </span>
+
+          </div>
+
+
+          <!-- Price -->
+
+          <div class="price">
+
+            <strong>
+              {{ plan.price }}
+            </strong>
+
+            <span>
+              {{ plan.period }}
+            </span>
+
+          </div>
+
+
+          <!-- Description -->
+
+          <p class="plan-description">
+            {{ plan.description }}
+          </p>
+
+
+          <!-- Features -->
+
+          <div class="features">
+
+            @for (feature of plan.features; track feature) {
+
+              <div class="feature">
+
+                <span class="check">
+                  ✓
+                </span>
+
+                <span>
+                  {{ feature }}
+                </span>
+
+              </div>
+
+            }
+
+          </div>
+
+
+          <!-- Join Button -->
+
+          <button
+            type="button"
+            class="pricing-btn"
+            [class.featured-btn]="plan.featured"
+            (click)="selectPlan(plan.name)"
+          >
+
+            JOIN NOW
+
+            <span>↗</span>
+
+          </button>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

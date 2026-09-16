@@ -1,1 +1,308 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: #0a0a0a;
+
+  color: white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+/* ================================
+   FLOATING WHATSAPP
+================================ */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25d366;
+  color: white;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  font-size: 27px;
+
+  z-index: 999;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition: 0.3s;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+
+/* ================================
+   BACK TO TOP
+================================ */
+
+.back-to-top {
+  position: fixed;
+
+  right: 25px;
+  bottom: 95px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff4d1c;
+  color: white;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  z-index: 998;
+
+  transition: 0.3s;
+}
+
+.back-to-top:hover {
+  background: white;
+  color: #111;
+
+  transform: translateY(-4px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .floating-whatsapp {
+    right: 18px;
+    bottom: 18px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 24px;
+  }
+
+  .back-to-top {
+    right: 18px;
+    bottom: 80px;
+
+    width: 38px;
+    height: 38px;
+  }
+
+}
+/* =================================
+   GLOBAL ANIMATIONS
+================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Hero */
+
+.hero-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-info {
+  animation: fadeUp 1s ease 0.3s both;
+}
+
+
+/* About */
+
+.about-image {
+  animation: scaleIn 0.8s ease forwards;
+}
+
+.about-content {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+
+/* Services */
+
+.service-card {
+  animation: fadeUp 0.7s ease both;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.service-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.service-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+
+/* Pricing */
+
+.pricing-card {
+  animation: fadeUp 0.7s ease both;
+}
+
+.pricing-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.pricing-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+/* Gallery */
+
+.gallery-item {
+  animation: scaleIn 0.7s ease both;
+}
+
+
+/* Testimonials */
+
+.testimonial-card {
+  animation: fadeUp 0.7s ease both;
+}
+
+.testimonial-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.testimonial-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+}
+/* =================================
+   SCROLL REVEAL
+================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+html,
+body {
+  overflow-x: hidden;
+}

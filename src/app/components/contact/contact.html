@@ -1,0 +1,274 @@
+<section class="contact-section reveal" id="contact">
+
+  <div class="contact-container">
+
+    <!-- Header -->
+
+    <div class="contact-header">
+
+      <span class="section-tag">GET IN TOUCH</span>
+
+      <h2>
+        READY TO
+        <span>START?</span>
+      </h2>
+
+      <p>
+        Have questions about membership or personal training?
+        Send us a message and our team will get back to you.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+
+      <div class="contact-info">
+
+        <div class="info-item">
+
+          <div class="info-icon">📍</div>
+
+          <div>
+            <span>VISIT US</span>
+            <h3>Model Town, Ludhiana</h3>
+            <p>Punjab, India</p>
+          </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+          <div class="info-icon">☎</div>
+
+          <div>
+            <span>CALL US</span>
+            <h3>+91 99999 99999</h3>
+            <p>Mon - Sat · 6 AM - 10 PM</p>
+          </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+          <div class="info-icon">✉</div>
+
+          <div>
+            <span>EMAIL US</span>
+            <h3>hello@royalfitness.com</h3>
+            <p>We reply within 24 hours.</p>
+          </div>
+
+        </div>
+
+
+        <!-- WhatsApp -->
+
+        <a
+          href="https://wa.me/919999999999"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="whatsapp-btn"
+        >
+          <span>WhatsApp</span>
+          <strong>CHAT WITH US ↗</strong>
+        </a>
+
+      </div>
+
+
+      <!-- Form -->
+
+      <div class="contact-form-wrapper">
+
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+        >
+
+          <!-- Name -->
+
+          <div class="form-group">
+
+            <label for="name">FULL NAME</label>
+
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Enter your name"
+            >
+
+            @if (name?.invalid && name?.touched) {
+              <small class="error">
+                Please enter your name.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- Email -->
+
+          <div class="form-group">
+
+            <label for="email">EMAIL ADDRESS</label>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="you@example.com"
+            >
+
+            @if (email?.invalid && email?.touched) {
+              <small class="error">
+                Please enter a valid email.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- Phone -->
+
+          <div class="form-group">
+
+            <label for="phone">PHONE NUMBER</label>
+
+            <input
+              id="phone"
+              type="tel"
+              formControlName="phone"
+              placeholder="10-digit mobile number"
+            >
+
+            @if (phone?.invalid && phone?.touched) {
+              <small class="error">
+                Please enter a valid 10-digit mobile number.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- Service -->
+
+          <div class="form-group">
+
+            <label for="service">INTERESTED IN</label>
+
+            <select
+  id="service"
+  formControlName="service"
+>
+
+  <option value="">
+    Select a service
+  </option>
+
+  <option value="Basic Membership">
+    Basic Membership
+  </option>
+
+  <option value="Pro Membership">
+    Pro Membership
+  </option>
+
+  <option value="Premium Membership">
+    Premium Membership
+  </option>
+
+  <option value="Personal Training">
+    Personal Training
+  </option>
+
+  <option value="Strength Training">
+    Strength Training
+  </option>
+
+  <option value="Cardio Training">
+    Cardio Training
+  </option>
+
+  <option value="CrossFit">
+    CrossFit
+  </option>
+
+  <option value="Yoga & Mobility">
+    Yoga & Mobility
+  </option>
+
+  <option value="Group Training">
+    Group Training
+  </option>
+
+</select>
+
+            @if (service?.invalid && service?.touched) {
+              <small class="error">
+                Please select a service.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- Message -->
+
+          <div class="form-group">
+
+            <label for="message">MESSAGE</label>
+
+            <textarea
+              id="message"
+              rows="5"
+              formControlName="message"
+              placeholder="Tell us how we can help..."
+            ></textarea>
+
+            @if (message?.invalid && message?.touched) {
+              <small class="error">
+                Please enter at least 10 characters.
+              </small>
+            }
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            SEND ENQUIRY
+            <span>↗</span>
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <!-- Map -->
+
+    <div class="map-wrapper">
+
+      <iframe
+        src="https://www.google.com/maps?q=Model+Town+Ludhiana+Punjab&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Royal Fitness Gym location"
+      ></iframe>
+
+    </div>
+
+  </div>
+
+</section>
